@@ -761,7 +761,7 @@
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "Epilogue", title: "AI와 함께 성장하는 <span class='hl'>영남이공대학교</span>",
       sub: "실력을 넘어 학생의 미래를 여는 대학 — 틸론이 그 성장의 인프라가 되겠습니다.",
-      video: "assets/media/mascot-growth.mp4",
+      video: "assets/media/mascot-growth.mp4?v=2",
       footer: "TILON × YEUNGNAM UNIVERSITY COLLEGE — AX Native Campus" },
   ];
 
