@@ -260,12 +260,12 @@
           <div class="tstat" ${anim("fade-right", 340)}><div class="n">AI <span class="hl-gold">12,800명</span> 부족</div><div class="t">2027년 기준</div></div>
           <div class="tstat" ${anim("fade-right", 460)}><div class="n">클라우드 <span class="hl-gold">18,800명</span> 부족</div><div class="t">신기술 전문인력</div></div>
           <div class="callout" style="margin-top:8px" ${anim("fade-up", 560)}>
-            <div class="big">"비어 있는 1만 8,800개의 일자리,<br><span class="hl">채우는 대학</span>"</div>
+            <div class="big" style="font-size:clamp(16px,1.9vw,26px)">클라우드와 AI 기반 교육환경에서 실무 역량 향상으로<br><span class="hl">거대한 인력 공백을 채우는 핵심 인재</span>로 성장 가능</div>
             <div class="small">AID 기반 스마트 교육 인프라로 클라우드 전문 인력 양성 촉진</div>
           </div>
         </div>
         <div class="side-visual" ${anim("zoom-in", 400)}>
-          <img src="assets/media/img-talent.png" alt="GPU 가속 VDI 기반 신기술 인재 양성" loading="lazy" />
+          <video class="fit-contain" src="assets/media/talent-live.mp4" autoplay muted loop playsinline preload="metadata" aria-label="GPU 가속 VDI 기반 신기술 인재 양성"></video>
           <div class="track-chips" ${anim("fade-up", 560)}>
             <span>모빌리티</span><span>반도체</span><span>로봇</span>
             <span>ABB</span><span>헬스케어</span><span>도심형서비스</span>
@@ -611,7 +611,7 @@
 
     { id: "slide-13", title: "신기술 인재 거점", effect: "zoom", layout: "talent", wide: true,
       eyebrow: "National Talent Hub", title: "국가적 신기술 인재 부족 해소의 거점",
-      sub: "GPU 가속 VDI 기반 실무형 인력 양성으로 6대 전략산업 인재난에 대응합니다." },
+      sub: "비어 있는 신기술 일자리를 채우는 대학, 나아가 <b class='hl'>국가 신기술 인재 공급 거점</b>으로 자리매김" },
 
     { id: "slide-14", title: "세계 명문의 선택", effect: "zoom", layout: "donuts2", wide: true,
       eyebrow: "The Choice of World-Class", title: "세계 명문의 선택, 미래혁신 위상 제고",
