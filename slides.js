@@ -800,6 +800,53 @@
       ],
       foot: "6PM · 집/기숙사 — <b class='hl'>DstationX + Tstation</b>으로 학교에서 작업하던 AI 코드·CAD·디자인 결과물을 그대로 이어서 작업. 캠퍼스는 “졸업까지 이어지는 나만의 전공 클라우드 환경”이 됩니다." },
 
+    { id: "teach-1", title: "Teaching 1 — 8AM 연구실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-vista.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "8AM · 연구실", prod: "CenterVista", desc: "학생 접속 현황·AI 사용량·과제 진행률 확인" },
+
+    { id: "teach-2", title: "Teaching 2 — 9AM 연구실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-cas.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "9AM · 연구실", prod: "CAS 통합 강의 플랫폼", desc: "수업자료·과제·평가 기준을 한 번에 준비" },
+
+    { id: "teach-3", title: "Teaching 3 — 10AM 강의실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-deploy.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "10AM · 강의실", prod: "DstationX", desc: "수업별 표준 실습환경 즉시 배포" },
+
+    { id: "teach-4", title: "Teaching 4 — 11AM AI 수업", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-gpu.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "11AM · AI 수업", prod: "Tstation + iStation", desc: "AI 개발환경과 GPU 자원을 학생·팀 단위로 배분" },
+
+    { id: "teach-5", title: "Teaching 5 — Before / After", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-ba.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "Before / After",
+      desc: "<b>Before</b> | PC 점검·SW 설치 오류·학생별 환경 차이 해결<br><b class='hl'>After</b> | 자동 배포·표준 실습환경·학생 피드백 집중" },
+
+    { id: "teach-6", title: "Teaching 6 — 1PM 산학 원격수업", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-face.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "1PM · 산학 원격수업", prod: "CenterFace", desc: "지역 기업 전문가·졸업생과 실시간 멘토링" },
+
+    { id: "teach-7", title: "Teaching 7 — 2PM 전공 실습실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-cad.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "2PM · 전공 실습실", prod: "Estation", desc: "CAD·3D·시뮬레이션·영상 실습 품질 표준화" },
+
+    { id: "teach-8", title: "Teaching 8 — 3PM 평가실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-cbt.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "3PM · 평가실", prod: "TAS CBT 평가", desc: "문제은행·자동저장·자동채점 기반 공정평가" },
+
+    { id: "teach-9", title: "Teaching 9 — 4PM 연구실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-rpa.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "4PM · 연구실", prod: "iStation Internal AI", desc: "공문·엑셀을 AI가 자동으로 문서화 (RPA) · 수업 Q&A와 실습 매뉴얼을 AI 조교로 응대" },
+
+    { id: "teach-10", title: "Teaching 10 — 5PM 원격지원·보안", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-remote.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "5PM · 원격지원·보안관리", prod: "Rstation + Twater", desc: "학생 실습 오류 원격 확인, 시험·산학자료 보안 강화" },
+
+    { id: "teach-end", title: "AI Native Teaching Life", effect: "zoom", layout: "scene",
+      bg: () => mediaBg("assets/media/teach-end.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "영남이공대 AI Native Teaching Life",
+      prod: "교수님은 운영자가 아니라,<br><span class='grad'>AI 기반 수업 설계자이자 학생 성장 코치</span>",
+      desc: "실습환경은 자동으로 배포되고, 교수님은 교육의 본질에 집중합니다." },
+
     { id: "slide-24", title: "교수의 하루 ①", effect: "fade", layout: "timeline", wide: true,
       bg: () => mediaBg("assets/media/bg-prof-am.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "07  Teaching Life — AM", title: "교수 라이프스타일 변화 ①",
