@@ -581,16 +581,6 @@
         "일부 학과 중심의 AI 교육이 아니라, <b>모든 전공이 AI를 활용하는 교육체계 전환</b>",
       ] },
 
-    { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
-      bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
-      eyebrow: "AI Native Campus 구현",
-      big: "“AI를 가르치는 대학”에서<br><span class='grad'>“AI 위에서 운영되는 대학”</span>으로",
-      bullets: [
-        "교육·실습·평가·행정·산학협력을 <b>AI 기반으로 연결</b>하는 대학 운영체계 전환",
-        "단일 솔루션 도입이 아닌, 캠퍼스 전체의 <b>운영 패러다임 전환</b>",
-      ],
-      curtain: true },
-
     { id: "slide-9", title: "차별없는 교육환경", effect: "zoom", layout: "kedi", wide: true,
       eyebrow: "Equal Access", title: "차별없는 디지털 교육환경",
       bullets: [
@@ -630,6 +620,16 @@
 
     { id: "slide-15", title: "운영 효율 & ESG", effect: "fade", layout: "efficiency", wide: true,
       eyebrow: "Operational Efficiency & ESG", title: "운영 효율성 및 친환경 캠퍼스" },
+
+    { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
+      bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
+      eyebrow: "AI Native Campus 구현",
+      big: "“AI를 가르치는 대학”에서<br><span class='grad'>“AI 위에서 운영되는 대학”</span>으로",
+      bullets: [
+        "교육·실습·평가·행정·산학협력을 <b>AI 기반으로 연결</b>하는 대학 운영체계 전환",
+        "단일 솔루션 도입이 아닌, 캠퍼스 전체의 <b>운영 패러다임 전환</b>",
+      ],
+      curtain: true },
 
     { id: "slide-16", title: "CHAPTER — 학과 혁신", effect: "curtain", layout: "divider",
       bg: () => mediaBg("assets/media/divider-dept.mp4", { video: true, cls: "media-bg--strong" }),
