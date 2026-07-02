@@ -521,6 +521,11 @@
         { icon: "gear", title: "대학체계혁신지수", w: 92, desc: "VDI·GPU·CBT 사용현황 통합 대시보드로 데이터 기반 의사결정 체계 전환" },
       ] },
 
+    { id: "slide-effects", title: "CHAPTER — 도입효과", effect: "curtain", layout: "divider",
+      bg: () => mediaBg("assets/media/divider-effects.mp4", { video: true, cls: "media-bg--strong" }),
+      chapter: "02", big: "AX Native Campus 도입효과",
+      sub: "AI Native Campus 구현부터 운영 효율·ESG까지 — 8가지 관점에서 살펴보는 영남이공대학교의 변화", curtain: true },
+
     { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
       eyebrow: "AI Native Campus 구현",
