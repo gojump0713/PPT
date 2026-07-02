@@ -336,6 +336,16 @@
       ${head(s)}
       <div class="split">
         <div class="cycle" ${anim("zoom-in", 300)}>
+          <svg class="cycle-orbit" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <marker id="cycArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="3.4" markerHeight="3.4" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="#38bdf8"/>
+              </marker>
+            </defs>
+            <g class="orbit-rot">
+              <path d="M 50 11 A 39 39 0 0 1 88.4 43.2" fill="none" stroke="#38bdf8" stroke-width="0.9" stroke-linecap="round" marker-end="url(#cycArrow)"/>
+            </g>
+          </svg>
           <div class="cycle-center">Data-Driven<br>Education</div>
           ${s.nodes.map((n, i) => `
             <div class="cycle-node p${i}">

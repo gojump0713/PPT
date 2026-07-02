@@ -51,10 +51,6 @@
     });
   });
 
-  /* slide-6: click toggles red text sweep on the vision phrases */
-  const sweepSlide = document.getElementById("slide-6");
-  if (sweepSlide) sweepSlide.addEventListener("click", () => sweepSlide.classList.toggle("sweep-on"));
-
   /* prime donut ring targets from data-p */
   deck.querySelectorAll(".donut .ring[data-p]").forEach((r) => {
     r.style.setProperty("--target", r.dataset.p);

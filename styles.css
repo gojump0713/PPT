@@ -552,7 +552,7 @@ table.tbl td { padding: 13px 16px; border-top: 1px solid var(--line-2); color: #
 table.tbl tbody tr:nth-child(even) { background: rgba(255,255,255,.02); }
 table.tbl td:first-child { font-weight: 800; color: #fff; white-space: nowrap; }
 table.tbl .sol { color: var(--accent); font-weight: 700; white-space: nowrap; }
-/* click-to-highlight: text turns red sweeping left → right (slide 6) */
+/* auto-highlight: vision phrases turn red left → right, 2s after slide entry (slide 6) */
 .red-sweep {
   font-weight: 800;
   background: linear-gradient(90deg, #ff5252 0%, #ff5252 50%, #cfdcec 50%, #cfdcec 100%);
@@ -560,7 +560,7 @@ table.tbl .sol { color: var(--accent); font-weight: 700; white-space: nowrap; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
   transition: background-position 1100ms var(--ease);
 }
-.slide.sweep-on .red-sweep { background-position: 0 0; }
+.slide.is-active .red-sweep { background-position: 0 0; transition-delay: 2000ms; }
 table.tbl .rv { color: var(--gold); font-weight: 800; }
 
 /* =========================================================================
@@ -734,6 +734,15 @@ table.tbl .rv { color: var(--gold); font-weight: 800; }
 .cycle-center { position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
   width:44%; aspect-ratio:1; border-radius:50%; display:grid; place-items:center; text-align:center;
   border: 2px dashed var(--line); font-weight:850; font-size: clamp(16px,1.9vw,26px); color: var(--cyan); line-height:1.15; }
+/* circular arrow orbiting the loop forever (starts at 강의 설계, clockwise) */
+.cycle-orbit { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.cycle-orbit .orbit-rot {
+  transform-origin: 50% 50%;
+  animation: orbit-spin 6s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, .7));
+}
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
+
 .cycle-node { position:absolute; width: 30%; text-align:center; }
 .cycle-node .cn-ic { width: clamp(46px,6vw,68px); aspect-ratio:1; border-radius:14px; margin:0 auto 8px; display:grid; place-items:center;
   background: rgba(56,189,248,.14); border:1px solid rgba(56,189,248,.34); color: var(--cyan); }
