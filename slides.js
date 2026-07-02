@@ -235,7 +235,7 @@
           ${list(s.bullets, 320, 110)}
         </div>
         <div class="side-visual" ${anim("zoom-in", 360)}>
-          <img src="assets/media/img-global-hub.png" alt="영남이공대학교 글로벌 Virtual Hub" loading="lazy" />
+          <video src="assets/media/global-reach.mp4" autoplay muted loop playsinline preload="metadata" aria-label="한국에서 전 세계로 뻗어나가는 글로벌 네트워크"></video>
           <div class="side-legend">
             <div ${anim("fade-up", 520)}><b>해외 유학생</b>가상 랩(Lab) 원격 학사과정 · ‘스터디 코리아 300K’ 선제 대응</div>
             <div ${anim("fade-up", 620)}><b>성인학습자</b>장소 제약 해소로 학령인구 감소 대응</div>

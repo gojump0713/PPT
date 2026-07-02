@@ -145,7 +145,8 @@ body::before {
 
 /* right-column AI visuals (slides 3 · 12 · 13) */
 .side-visual { width: 100%; max-width: 520px; justify-self: end; }
-.side-visual img {
+.side-visual img,
+.side-visual video {
   width: 100%; border-radius: 16px; display: block;
   border: 1px solid rgba(255, 255, 255, .1);
   box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
