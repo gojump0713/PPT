@@ -85,6 +85,13 @@
       s.setAttribute("aria-current", i === index ? "true" : "false");
     });
     dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    // play bg videos only on the active slide (saves GPU/battery)
+    slides.forEach((s, i) => {
+      s.querySelectorAll(".media-bg video").forEach((v) => {
+        if (i === index) v.play().catch(() => {});
+        else v.pause();
+      });
+    });
     counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
     progress.style.width = `${((index + 1) / total) * 100}%`;
 

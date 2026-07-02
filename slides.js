@@ -32,6 +32,13 @@
 
   /* ---- shared bits -------------------------------------------------------- */
   const anim = (t, d) => `data-animate="${t}"${d != null ? ` style="transition-delay:${d}ms"` : ""}`;
+  /* AI-generated media background layer (image or looping video + veil) */
+  const mediaBg = (src, o = {}) => {
+    const el = o.video
+      ? `<video src="${src}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>`
+      : `<img src="${src}" alt="" loading="lazy" aria-hidden="true" />`;
+    return `<div class="media-bg${o.cls ? ` ${o.cls}` : ""}">${el}</div>`;
+  };
   const head = (s, opts = {}) =>
     `<div class="slide-head">
        ${s.eyebrow ? `<span class="eyebrow" ${anim("fade-right", 0)}>${s.eyebrow}</span>` : ""}
@@ -211,6 +218,7 @@
         </div>
         <div class="visual">
           <div class="card" ${anim("fade-left", 300)} style="text-align:center;width:100%">
+            <img class="career-shot" src="assets/media/img-career.png" alt="VDI 업무환경에서 근무하는 졸업생" loading="lazy" />
             <div class="eyebrow" style="justify-content:center">4학년 취업준비 C학생 사례</div>
             <div class="grid g-2" style="margin:10px 0 4px">
               <div class="tag" style="justify-content:center">VDI 업무환경 선행학습</div>
@@ -446,9 +454,10 @@
      ======================================================================= */
   const SLIDES = [
     { id: "slide-1", title: "Opening", effect: "parallax", layout: "cover",
-      bg: () => '<div class="cover-orb"></div>' },
+      bg: () => mediaBg("assets/media/hero-campus.mp4", { video: true, cls: "media-bg--strong" }) + '<div class="cover-orb"></div>' },
 
     { id: "slide-2", title: "종합 제안", effect: "fade", layout: "statement",
+      bg: () => mediaBg("assets/media/bg-vision.png"),
       eyebrow: "AI Native Campus 종합 제안",
       big: "영남이공대의 비전,<br><span class='grad'>틸론이 완성하는 인프라</span>",
       bullets: [
@@ -512,6 +521,7 @@
       ] },
 
     { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
+      bg: () => mediaBg("assets/media/bg-ainative.png"),
       eyebrow: "AI Native Campus 구현",
       big: "“AI를 가르치는 대학”에서<br><span class='grad'>“AI 위에서 운영되는 대학”</span>으로",
       bullets: [
@@ -568,6 +578,7 @@
       eyebrow: "Operational Efficiency & ESG", title: "운영 효율성 및 친환경 캠퍼스" },
 
     { id: "slide-16", title: "CHAPTER — 학과 혁신", effect: "curtain", layout: "divider",
+      bg: () => mediaBg("assets/media/divider-dept.mp4", { video: true, cls: "media-bg--strong" }),
       chapter: "03", big: "계열 학과별 교육방식의 혁신적 변화",
       sub: "35개 전 학과·계열이 어떻게 바뀌는지 살펴봅니다.", curtain: true },
 
@@ -650,6 +661,7 @@
       ] },
 
     { id: "slide-22", title: "학생의 하루 ①", effect: "parallax", layout: "timeline", wide: true,
+      bg: () => mediaBg("assets/media/bg-student-am.png", { cls: "media-bg--faint" }),
       eyebrow: "05  Student Life — AM", title: "학생 라이프스타일 변화 ①",
       sub: "영남이공대 신입생의 오전 — 캠퍼스는 “장소”가 아니라 “접속 가능한 전공 실습환경”이 됩니다.",
       items: [
@@ -661,6 +673,7 @@
       ba: { b: "실습실 PC가 비어 있어야 하고, 내 노트북 성능이 좋아야 실습 가능", a: "언제 어디서나 동일한 전공 실습환경에 접속" } },
 
     { id: "slide-23", title: "학생의 하루 ②", effect: "fade", layout: "timeline", wide: true,
+      bg: () => mediaBg("assets/media/bg-student-pm.png", { cls: "media-bg--faint" }),
       eyebrow: "06  Student Life — PM", title: "학생 라이프스타일 변화 ②",
       sub: "오후 — AI 활용, 팀 프로젝트, CBT 평가, 포트폴리오가 하나로 이어집니다.",
       items: [
@@ -672,6 +685,7 @@
       foot: "6PM · 집/기숙사 — <b class='hl'>DstationX + Tstation</b>으로 학교에서 작업하던 AI 코드·CAD·디자인 결과물을 그대로 이어서 작업. 캠퍼스는 “졸업까지 이어지는 나만의 전공 클라우드 환경”이 됩니다." },
 
     { id: "slide-24", title: "교수의 하루 ①", effect: "fade", layout: "timeline", wide: true,
+      bg: () => mediaBg("assets/media/bg-prof-am.png", { cls: "media-bg--faint" }),
       eyebrow: "07  Teaching Life — AM", title: "교수 라이프스타일 변화 ①",
       sub: "오전 — 실습실 관리에서 벗어나 수업 설계와 학습 데이터 기반 피드백에 집중합니다.",
       items: [
@@ -683,6 +697,7 @@
       ba: { b: "PC 상태 확인·SW 설치 오류·학생별 환경 차이 해결에 수업 시간 소모", a: "실습환경은 자동 배포, 교수님은 교육 설계와 피드백에 집중" } },
 
     { id: "slide-25", title: "교수의 하루 ②", effect: "fade", layout: "timeline", wide: true,
+      bg: () => mediaBg("assets/media/bg-prof-pm.png", { cls: "media-bg--faint" }),
       eyebrow: "08  Teaching Life — PM", title: "교수 라이프스타일 변화 ②",
       sub: "오후 — 산학수업, CBT 평가, AI 조교, 원격지원까지 수업 운영이 데이터화됩니다.",
       items: [
@@ -716,6 +731,7 @@
       footer: "틸론 도입은 “전산 솔루션 구매”가 아니라 영남이공대의 X+AI 직업교육 비전을 매일 쓰이는 캠퍼스 인프라로 전환하는 의사결정입니다." },
 
     { id: "slide-28", title: "CHAPTER — 설문조사", effect: "curtain", layout: "divider",
+      bg: () => mediaBg("assets/media/divider-survey.mp4", { video: true, cls: "media-bg--strong" }),
       chapter: "04", big: "VDI 도입 설문조사",
       sub: "먼저 도입한 대학의 실제 응답 — 서강대학교 사례.", curtain: true },
 
