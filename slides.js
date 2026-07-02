@@ -470,6 +470,7 @@
       footer: "틸론과 함께, 영남이공대학교만의 AI Native Campus를 완성합니다." },
 
     { id: "slide-3", title: "제안의 핵심", effect: "zoom", layout: "transform", wide: true,
+      bg: () => '<div class="darkveil-wrap"><canvas class="darkveil-canvas"></canvas></div>',
       title2: true, eyebrow: "The Core Proposal",
       title: "AI 도입은 솔루션이 아니라 <span class='hl'>인프라</span>입니다",
       sub: "VDI 기반 데이터 통합 환경에 GPU·AI·CBT·LMS가 하나의 캠퍼스 운영체계로 연결될 때 전 학과 AX가 가능합니다." },

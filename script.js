@@ -43,6 +43,14 @@
 
   const slides = [...deck.querySelectorAll(".slide")];
 
+  /* init DarkVeil shader backgrounds (paused until slide activates) */
+  deck.querySelectorAll("canvas.darkveil-canvas").forEach((c) => {
+    if (window.DarkVeil) c._veil = window.DarkVeil(c, {
+      hueShift: 0, noiseIntensity: 0, scanlineIntensity: 0,
+      speed: 0.9, scanlineFrequency: 0, warpAmount: 0, resolutionScale: 1,
+    });
+  });
+
   /* prime donut ring targets from data-p */
   deck.querySelectorAll(".donut .ring[data-p]").forEach((r) => {
     r.style.setProperty("--target", r.dataset.p);
@@ -85,11 +93,14 @@
       s.setAttribute("aria-current", i === index ? "true" : "false");
     });
     dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
-    // play videos only on the active slide (saves GPU/battery)
+    // play videos / shader canvases only on the active slide (saves GPU/battery)
     slides.forEach((s, i) => {
       s.querySelectorAll("video").forEach((v) => {
         if (i === index) v.play().catch(() => {});
         else v.pause();
+      });
+      s.querySelectorAll("canvas.darkveil-canvas").forEach((c) => {
+        if (c._veil) (i === index ? c._veil.start() : c._veil.stop());
       });
     });
     counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
