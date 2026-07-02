@@ -425,20 +425,21 @@
 
     /* 9. bootcamp (video showcase → text reveal) --------------------------- */
     bootcamp: (s) => `
+      <div class="bc-hero" aria-hidden="true"><div class="bc-hero__t">전교생이 만드는<br><span class="grad">'AI 캡스톤 캠퍼스'</span></div></div>
       <div class="slide-head">
-        <span class="eyebrow" ${anim("fade-right", 2600)}>${s.eyebrow}</span>
-        <h2 class="stitle" ${anim("fade-up", 2750)}>${s.title}</h2>
-        <p class="ssub" ${anim("fade-up", 2900)} style="max-width:72ch">${s.sub}</p>
+        <span class="eyebrow" ${anim("fade-right", 8200)}>${s.eyebrow}</span>
+        <h2 class="stitle" ${anim("fade-up", 8350)}>${s.title}</h2>
+        <p class="ssub" ${anim("fade-up", 8500)} style="max-width:72ch">${s.sub}</p>
       </div>
       <div class="bc-grid">
-        <div class="bc-card" ${anim("fade-up", 3080)}>
+        <div class="bc-card" ${anim("fade-up", 8680)}>
           <h3><span class="bc-n">①</span> 전교생 대상 AI 캡스톤 개최 기반 확보</h3>
           <ul>
             <li>iStation이 제공하는 각종 API(AI 모델 호출 · 데이터 처리 · 가상 개발환경)를 활용해 <b>전공 구분 없이 전체 학생이 참여</b>하는 AI 캡스톤 프로젝트 운영</li>
             <li>드론·로봇·피지컬AI(공학계열), 금융·경영(상경계열) 등 <b>5대 분야별 AI 소프트웨어 개발 트랙</b> 구성 — 비전공자도 초급→중·고급 단계별 진입 가능</li>
           </ul>
         </div>
-        <div class="bc-card" ${anim("fade-up", 3260)}>
+        <div class="bc-card" ${anim("fade-up", 8860)}>
           <h3><span class="bc-n">②</span> 틸론 최고 엔지니어의 현장 파견 지원</h3>
           <ul>
             <li>AI SW 개발 전 과정에 <b>틸론 최정예 개발자가 파견</b>되어 설계·코드리뷰·기술 멘토링 수행</li>
@@ -446,7 +447,7 @@
           </ul>
         </div>
       </div>
-      <div class="callout bc-effect" ${anim("fade-up", 3440)}>
+      <div class="callout bc-effect" ${anim("fade-up", 9040)}>
         <div class="eyebrow" style="justify-content:center">③ 기대효과</div>
         <div class="big" style="font-size:clamp(15px,1.75vw,23px)">"전교생 AI 실무역량 + 산학 공동 교육실적 + 정부 재정지원사업 수주 경쟁력 + 취업연계형 포트폴리오"</div>
         <div class="small">지역 AI 인재양성 거점대학으로의 포지셔닝</div>
@@ -537,7 +538,7 @@
       ] },
 
     { id: "slide-6", title: "Strategic Alignment", effect: "fade", layout: "table", wide: true,
-      bg: () => mediaBg("assets/media/bg-arrows.mp4", { video: true, cls: "media-bg--faint" }),
+      bg: () => mediaBg("assets/media/bg-lights-meet.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "Strategic Alignment", title: "비전 실현의 가교",
       sub: "틸론 솔루션은 영남이공대의 비전 문구를 실제 수업·실습·평가·성과관리·산학협력 시스템으로 전환하는 실행 인프라입니다.",
       rvLast: true,
@@ -552,6 +553,7 @@
       footer: "AX Native Campus는 전산실 개선 사업이 아니라, 비전과 AID 전환 목표를 수업·실습·평가·산학협력·평생직업교육으로 구현하는 전략사업입니다." },
 
     { id: "slide-7", title: "5대 혁신지수", effect: "fade", layout: "index5", wide: true,
+      bg: () => mediaBg("assets/media/bg-arrows.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "Innovation Index", title: "5대 혁신지수 달성 및 환류 고도화",
       items: [
         { icon: "grad", title: "교육품질혁신지수", w: 88, desc: "수업별 표준 실습환경 보장, AI·GPU 접근성 확보, 학습성과 데이터 정량 관리" },

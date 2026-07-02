@@ -141,6 +141,25 @@ body::before {
 .media-bg--showcase::after { opacity: .25; transition: opacity 2200ms ease 2000ms; }
 .slide.is-active .media-bg--showcase::after { opacity: 1; }
 
+/* bootcamp hero: big centered title appears as video dims, holds 5s, fades */
+.bc-hero {
+  position: absolute; inset: 0; z-index: 4;
+  display: grid; place-items: center; text-align: center;
+  pointer-events: none; opacity: 0;
+}
+.bc-hero__t {
+  font-weight: 900; line-height: 1.25;
+  font-size: clamp(40px, 5.6vw, 84px);
+  text-shadow: 0 8px 40px rgba(0, 0, 0, .6);
+}
+.slide.is-active .bc-hero { animation: bc-hero 5900ms ease 2200ms forwards; }
+@keyframes bc-hero {
+  0%   { opacity: 0; transform: scale(.94); }
+  10%  { opacity: 1; transform: scale(1); }
+  88%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.03); }
+}
+
 /* bootcamp slide content */
 .bc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 1.8vw, 24px); margin-top: 6px; }
 .bc-card {
@@ -567,9 +586,27 @@ table.tbl .rv { color: var(--gold); font-weight: 800; }
 .col-bar .fillv .v { font-weight: 850; font-size: clamp(20px,2.4vw,34px); color: #04140d; }
 .col-bar .cap { margin-top: 14px; font-weight: 700; color: #dbe6f5; text-align: center; font-size: clamp(13px,1.3vw,17px); }
 .col-bar .cap small { display:block; color: var(--muted); font-weight: 500; margin-top: 3px; }
-.col-bar.c1 .fillv { background: linear-gradient(180deg, #6f86a8, #45566f); }
-.col-bar.c2 .fillv { background: linear-gradient(180deg, #7fa79a, #4f6f63); }
-.col-bar.c3 .fillv { background: linear-gradient(180deg, var(--accent), var(--accent-d)); box-shadow: 0 0 44px rgba(34,201,138,.35); }
+.col-bar.c1 .fillv { background: linear-gradient(180deg, #6f86a8, #45566f); transition-delay: 250ms; }
+.col-bar.c2 .fillv { background: linear-gradient(180deg, #7fa79a, #4f6f63); transition-delay: 550ms; }
+.col-bar.c3 .fillv { background: linear-gradient(180deg, var(--accent), var(--accent-d)); box-shadow: 0 0 44px rgba(34,201,138,.35); transition-delay: 850ms; }
+/* value labels pop in after each bar rises */
+.col-bar .fillv .v { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+.slide.is-active .col-bar.c1 .fillv .v { opacity: 1; transform: none; transition-delay: 1300ms; }
+.slide.is-active .col-bar.c2 .fillv .v { opacity: 1; transform: none; transition-delay: 1600ms; }
+.slide.is-active .col-bar.c3 .fillv .v { opacity: 1; transform: none; transition-delay: 1900ms; }
+/* winning bar: shine sweep + breathing glow */
+.col-bar.c3 .fillv { overflow: hidden; }
+.col-bar.c3 .fillv::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+  background-size: 220% 100%;
+  animation: bar-shine 2.8s linear infinite;
+}
+.slide.is-active .col-bar.c3 .fillv { animation: c3-glow 2.6s ease-in-out 2.4s infinite; }
+@keyframes c3-glow {
+  0%, 100% { box-shadow: 0 0 44px rgba(34,201,138,.35); }
+  50%      { box-shadow: 0 0 80px rgba(34,201,138,.65); }
+}
 
 /* =========================================================================
    Layout: DONUTS
