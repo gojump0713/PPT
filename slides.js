@@ -574,6 +574,13 @@
       title: "AI 부트캠프 운영 — 전교생이 만드는 <span class='hl'>'AI 캡스톤 캠퍼스'</span>",
       sub: "iStation의 개방형 API 위에서 영남이공대 전 계열 학생이 드론·로봇·피지컬AI·금융·경영 AI 소프트웨어를 직접 개발하고, 틸론 최정예 엔지니어가 현장에 상주 멘토링하는 실전형 AI 인재양성 체계를 완성합니다." },
 
+    { id: "slide-10", title: "전 학과 X+AI", effect: "fade", layout: "gallery", wide: true,
+      eyebrow: "X + AI for Every Department", title: "전 학과 X+AI 확산",
+      bullets: [
+        "보건·공학·디자인·서비스·복지·경영까지 <b>전공별 AI 실습 설계</b>",
+        "일부 학과 중심의 AI 교육이 아니라, <b>모든 전공이 AI를 활용하는 교육체계 전환</b>",
+      ] },
+
     { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
       eyebrow: "AI Native Campus 구현",
@@ -592,13 +599,6 @@
         "학과·강의·커리큘럼별 특성에 맞는 클라우드PC <small>(Standard PC · Workstation · GPU)</small>",
       ],
       note: "학습 환경에 공정하고 우수한 IT자원 배분으로 학업 성취률 향상" },
-
-    { id: "slide-10", title: "전 학과 X+AI", effect: "fade", layout: "gallery", wide: true,
-      eyebrow: "X + AI for Every Department", title: "전 학과 X+AI 확산",
-      bullets: [
-        "보건·공학·디자인·서비스·복지·경영까지 <b>전공별 AI 실습 설계</b>",
-        "일부 학과 중심이 아닌 <b>전 학과 AI 역량 확보</b>",
-      ] },
 
     { id: "slide-11", title: "취업·창업 경쟁력", effect: "fade", layout: "career", wide: true,
       eyebrow: "Career & Startup", title: "취업·창업 경쟁력 강화", sub: "실무 경험으로 입사하는 4년",
