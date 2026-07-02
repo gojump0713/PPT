@@ -458,6 +458,14 @@
         <div class="small">지역 AI 인재양성 거점대학으로의 포지셔닝</div>
       </div>`,
 
+    /* scenes: full-bleed video + caption (AI Native Campus Life) ---------- */
+    scene: (s) => `
+      <div class="scene-cap">
+        <span class="scene-tag" ${anim("fade-right", 400)}>${s.tag}</span>
+        ${s.prod ? `<h2 class="scene-t" ${anim("fade-up", 600)}>${s.prod}</h2>` : ""}
+        <p class="scene-d" ${anim("fade-up", 800)}>${s.desc}</p>
+      </div>`,
+
     /* 31. finale (mascot growth video) ------------------------------------ */
     finale: (s) => `
       ${head(s)}
@@ -720,6 +728,53 @@
         { icon: "check", title: "평가 운영", prod: "TAS", desc: "CBT/IBT 자동채점·공정 평가" },
         { icon: "chart", title: "성과 분석", prod: "CenterVista", desc: "학습·AI 사용 Dashboard" },
       ] },
+
+    { id: "scene-1", title: "Scene 1 — 8AM 통학버스", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-bus.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "8AM · 통학버스", prod: "Dstation 접속", desc: "태블릿으로 나의 가상 PC에 접속, 발표자료 작성" },
+
+    { id: "scene-2", title: "Scene 2 — 9AM 강의실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-class.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "9AM · 강의실", prod: "CAS 통합 강의 플랫폼", desc: "강의자료·출석·과제·질의응답을 한 번에 확인" },
+
+    { id: "scene-3", title: "Scene 3 — 10AM AI 실습실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-ailab.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "10AM · AI 실습실", prod: "Tstation 원클릭 실행", desc: "VSCode·Python·AI 프레임워크가 준비된 개발환경" },
+
+    { id: "scene-4", title: "Scene 4 — 11AM 전공실습실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-cad.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "11AM · 전공실습실", prod: "Estation 엔지니어링 VDI", desc: "노후 노트북에서도 CAD·시뮬레이션 실습 가능" },
+
+    { id: "scene-5", title: "Scene 5 — Before / After", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-ba.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "Before / After",
+      desc: "<b>Before</b> | 실습실 PC와 개인 노트북 성능에 의존<br><b class='hl'>After</b> | 언제 어디서나 동일한 전공 실습환경 접속" },
+
+    { id: "scene-6", title: "Scene 6 — 12PM 휴게공간", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-msg.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "12PM · 휴게공간", prod: "Station VDI 전용 메신저", desc: "교수 피드백과 팀 프로젝트 공지 확인" },
+
+    { id: "scene-7", title: "Scene 7 — 1PM 프로젝트룸", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-ai.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "1PM · 프로젝트룸", prod: "iStation Internal AI", desc: "전공 데이터를 활용한 AI 실습 수행" },
+
+    { id: "scene-8", title: "Scene 8 — 3PM CBT 시험실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-cbt.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "3PM · CBT 시험실", prod: "TAS 기반 CBT 평가", desc: "문제은행·자동저장·부정행위 방지·자동채점" },
+
+    { id: "scene-9", title: "Scene 9 — 4PM 첨단강의실", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-vs.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "4PM · 첨단강의실", prod: "Vstation 무선 발표", desc: "USB 없이 가상 데스크톱 결과물 바로 발표" },
+
+    { id: "scene-10", title: "Scene 10 — 6PM 집·기숙사", effect: "fade", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-home.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "6PM · 집·기숙사", prod: "Dstation + Tstation", desc: "학교에서 작업하던 결과물을 그대로 이어서 작업" },
+
+    { id: "scene-end", title: "AI Native Campus Life", effect: "zoom", layout: "scene",
+      bg: () => mediaBg("assets/media/scene-end.mp4", { video: true, cls: "media-bg--scene" }),
+      tag: "영남이공대 AI Native Campus Life",
+      prod: "캠퍼스는 특정 공간이 아니라,<br>졸업까지 이어지는 <span class='grad'>나만의 전공 클라우드 환경</span>",
+      desc: "학생의 장비가 아닌, 학생의 역량이 실습 결과를 결정하는 캠퍼스" },
 
     { id: "slide-22", title: "학생의 하루 ①", effect: "parallax", layout: "timeline", wide: true,
       bg: () => mediaBg("assets/media/bg-student-am.mp4", { video: true, cls: "media-bg--faint" }),

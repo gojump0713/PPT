@@ -135,6 +135,29 @@ body::before {
 .media-bg--faint img,
 .media-bg--faint video { opacity: .38; }
 
+/* scene slides: prominent full-bleed video + lower-third caption */
+.media-bg--scene video { opacity: .88; }
+.media-bg--scene::after {
+  background:
+    linear-gradient(180deg, rgba(6, 11, 22, .3) 0%, rgba(6, 11, 22, .06) 42%, rgba(6, 11, 22, .82) 100%);
+}
+.scene-cap { margin-top: 42vh; max-width: 980px; }
+.scene-tag {
+  display: inline-block; background: rgba(6, 12, 22, .72);
+  border: 1px solid rgba(34, 201, 138, .5); color: var(--accent);
+  border-radius: 24px; padding: 8px 18px;
+  font-weight: 800; letter-spacing: .06em; font-size: clamp(13px, 1.3vw, 17px);
+  backdrop-filter: blur(6px);
+}
+.scene-t {
+  font-size: clamp(30px, 3.6vw, 54px); font-weight: 900; line-height: 1.25;
+  margin-top: 14px; text-shadow: 0 6px 30px rgba(0, 0, 0, .65);
+}
+.scene-d {
+  color: #dbe6f5; font-size: clamp(16px, 1.8vw, 24px); line-height: 1.55;
+  margin-top: 10px; font-weight: 700; text-shadow: 0 4px 20px rgba(0, 0, 0, .6);
+}
+
 /* showcase: video plays prominently, then dims while text fades in */
 .media-bg--showcase video { opacity: .9; transition: opacity 2200ms ease 2000ms; }
 .slide.is-active .media-bg--showcase video { opacity: .16; }
