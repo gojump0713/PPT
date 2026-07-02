@@ -135,6 +135,43 @@ body::before {
   box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
 }
 
+/* right-column AI visuals (slides 3 · 12 · 13) */
+.side-visual { width: 100%; max-width: 520px; justify-self: end; }
+.side-visual img {
+  width: 100%; border-radius: 16px; display: block;
+  border: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+}
+.side-cap { color: var(--faint); font-size: clamp(12px, 1.2vw, 14px); margin-top: 12px; text-align: center; }
+.side-legend { display: grid; gap: 10px; margin-top: 16px; }
+.side-legend div {
+  background: rgba(255, 255, 255, .04); border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px 14px;
+  color: var(--muted); font-size: clamp(12px, 1.25vw, 15px);
+}
+.side-legend b { color: var(--accent); margin-right: 8px; }
+.track-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+.track-chips span {
+  background: rgba(34, 201, 138, .16); color: #b9f4da; border: 1px solid rgba(34, 201, 138, .36);
+  border-radius: 8px; padding: 6px 12px; font-weight: 700; font-size: clamp(12px, 1.1vw, 14px);
+}
+
+/* efficiency top banner (slide 15) */
+.eff-banner {
+  width: 100%; max-height: 26vh; object-fit: cover; display: block;
+  border-radius: 16px; border: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+  margin-bottom: clamp(16px, 2.4vh, 26px);
+}
+
+/* finale (slide 31 — mascot growth video) */
+.finale { display: flex; justify-content: center; margin-top: clamp(10px, 2vh, 22px); }
+.finale-video {
+  width: min(880px, 88%); aspect-ratio: 16/9; object-fit: cover; display: block;
+  border-radius: 20px; border: 1px solid rgba(34, 201, 138, .35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .06), 0 30px 80px rgba(0, 0, 0, .55), 0 0 90px rgba(34, 201, 138, .18);
+}
+
 /* =========================================================================
    Transition effects  (activated by .is-active)
    ========================================================================= */
@@ -375,13 +412,13 @@ body::before {
    Layout: FLOW (architecture stacked layers)
    ========================================================================= */
 .flow { display: grid; gap: 14px; }
-.flow-row { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+.flow-row { display: grid; grid-template-columns: 1fr clamp(280px, 36vw, 470px); gap: 20px; align-items: center;
   background: linear-gradient(90deg, var(--bg-3), #0b1730); border: 1px solid var(--line);
   border-radius: 16px; padding: clamp(16px,1.9vw,26px) clamp(20px,2.4vw,34px); position: relative; }
 .flow-row::before { content:""; position:absolute; left:0; top:12px; bottom:12px; width:4px; border-radius:4px; background: var(--accent); }
 .flow-row h3 { font-size: clamp(17px,1.9vw,26px); font-weight: 800; }
 .flow-row p { color: var(--muted); margin-top: 4px; font-size: clamp(13px,1.3vw,16px); }
-.flow-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; max-width: 44%; }
+.flow-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
 .tag { background: rgba(34,201,138,.16); color: #b9f4da; border: 1px solid rgba(34,201,138,.36);
   border-radius: 8px; padding: 7px 13px; font-weight: 700; font-size: clamp(12px,1.15vw,15px); white-space: nowrap; }
 
@@ -466,8 +503,20 @@ table.tbl .rv { color: var(--gold); font-weight: 800; }
 .idx-card .ic svg { width: 28px; height: 28px; }
 .idx-card h3 { font-size: clamp(14px,1.4vw,18px); font-weight: 800; }
 .idx-card p { color: var(--muted); margin-top: 10px; font-size: clamp(12px,1.15vw,14px); line-height: 1.5; }
-.idx-card .bar-mini { height: 6px; border-radius: 4px; background: rgba(255,255,255,.06); margin-bottom: 18px; overflow: hidden; }
-.idx-card .bar-mini i { display:block; height:100%; width:0; background: linear-gradient(90deg,var(--accent),var(--cyan)); transition: width 1200ms var(--ease); }
+.idx-card .bar-mini { height: 8px; border-radius: 4px; background: rgba(255,255,255,.06); margin-bottom: 18px; overflow: hidden; }
+.idx-card .bar-mini i {
+  display:block; height:100%; width:0; position:relative;
+  background: linear-gradient(90deg,var(--accent),var(--cyan));
+  transition: width 1600ms cubic-bezier(.22,1,.36,1);
+  box-shadow: 0 0 14px rgba(34,201,138,.55);
+}
+.idx-card .bar-mini i::after {
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: bar-shine 2.6s linear infinite;
+}
+@keyframes bar-shine { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 .slide.is-active .idx-card .bar-mini i { width: var(--w,80%); }
 
 /* =========================================================================

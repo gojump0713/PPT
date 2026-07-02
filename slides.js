@@ -109,18 +109,9 @@
             <div class="big" style="font-size:clamp(15px,1.7vw,22px)">‘AI를 가르치는 대학’을 넘어<br><span class="hl">‘AI 인프라 위에서 모든 전공을 혁신하는 대학’</span>으로</div>
           </div>
         </div>
-        <div class="hub-graph" ${anim("zoom-in", 320)} style="max-width:400px">
-          <div class="hub-center">VDI / GPU</div>
-          ${[
-            ["LMS", "top:0;left:50%;transform:translateX(-50%)"],
-            ["CBT", "top:24%;right:2%"],
-            ["Student<br>Services", "bottom:22%;right:0"],
-            ["Research<br>Data", "bottom:0;right:28%"],
-            ["Campus<br>Operations", "bottom:0;left:28%"],
-            ["Learning<br>Analytics", "bottom:22%;left:0"],
-            ["Campus<br>Services", "top:24%;left:2%"],
-            ["AI Platform", "top:4%;left:16%"],
-          ].map(([t, pos]) => `<div class="tag" style="position:absolute;text-align:center;${pos}">${t}</div>`).join("")}
+        <div class="side-visual" ${anim("zoom-in", 320)}>
+          <img src="assets/media/img-core-hub.png" alt="VDI·GPU 통합 인프라 허브 — LMS·CBT·AI 플랫폼·학습분석·캠퍼스 운영 연결" loading="lazy" />
+          <div class="side-cap">VDI · GPU 코어가 LMS · CBT · AI · 분석 · 운영을 하나로 연결</div>
         </div>
       </div>`,
 
@@ -165,7 +156,7 @@
           <div class="idx-card" ${anim("fade-up", 200 + i * 100)}>
             <div class="ic">${I[it.icon]}</div>
             <h3>${it.title}</h3>
-            <div class="bar-mini" style="margin-top:14px"><i style="--w:${it.w}%"></i></div>
+            <div class="bar-mini" style="margin-top:14px"><i style="--w:${it.w}%;transition-delay:${350 + i * 160}ms"></i></div>
             <p>${it.desc}</p>
           </div>`).join("")}
       </div>`,
@@ -240,11 +231,13 @@
           <p class="ssub" ${anim("fade-right", 200)}>${s.lead}</p>
           ${list(s.bullets, 320, 110)}
         </div>
-        <div class="hub-graph" ${anim("zoom-in", 360)}>
-          <div class="hub-center lift">영남이공대학교<br>Virtual Hub</div>
-          <div class="hub-node n1 lift-2"><div class="dot">${I.globe}</div><h4>[해외 유학생]</h4><p>가상 랩(Lab) 원격 학사과정 · ‘스터디 코리아 300K’ 선제 대응</p></div>
-          <div class="hub-node n2 lift-2"><div class="dot">${I.book}</div><h4>[성인학습자]</h4><p>장소 제약 해소로 학령인구 감소 대응</p></div>
-          <div class="hub-node n3 lift-2"><div class="dot">${I.briefcase}</div><h4>[재직자]</h4><p>설치 없이 접속하는 실습환경 · 지역사회 교육 거점</p></div>
+        <div class="side-visual" ${anim("zoom-in", 360)}>
+          <img src="assets/media/img-global-hub.png" alt="영남이공대학교 글로벌 Virtual Hub" loading="lazy" />
+          <div class="side-legend">
+            <div ${anim("fade-up", 520)}><b>해외 유학생</b>가상 랩(Lab) 원격 학사과정 · ‘스터디 코리아 300K’ 선제 대응</div>
+            <div ${anim("fade-up", 620)}><b>성인학습자</b>장소 제약 해소로 학령인구 감소 대응</div>
+            <div ${anim("fade-up", 720)}><b>재직자</b>설치 없이 접속하는 실습환경 · 지역사회 교육 거점</div>
+          </div>
         </div>
       </div>`,
 
@@ -261,17 +254,13 @@
             <div class="small">AID 기반 스마트 교육 인프라로 클라우드 전문 인력 양성 촉진</div>
           </div>
         </div>
-        <div>
-          <div class="track6" ${anim("zoom-in", 400)}>
-            <svg class="track6-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M5 11l7-7 7 7"/></svg>
-            <div class="track6-title">6-Track</div>
-            <div class="track6-grid">
-              <span>모빌리티</span><span>반도체</span>
-              <span>로봇</span><span>ABB</span>
-              <span>헬스케어</span><span>도심형서비스</span>
-            </div>
-            <div class="track6-base">GPU 가속 VDI 기반 실무형 인력 양성</div>
+        <div class="side-visual" ${anim("zoom-in", 400)}>
+          <img src="assets/media/img-talent.png" alt="GPU 가속 VDI 기반 신기술 인재 양성" loading="lazy" />
+          <div class="track-chips" ${anim("fade-up", 560)}>
+            <span>모빌리티</span><span>반도체</span><span>로봇</span>
+            <span>ABB</span><span>헬스케어</span><span>도심형서비스</span>
           </div>
+          <div class="side-cap">6-Track · GPU 가속 VDI 기반 실무형 인력 양성</div>
         </div>
       </div>`,
 
@@ -293,6 +282,7 @@
     /* 15. efficiency ----------------------------------------------------- */
     efficiency: (s) => `
       ${head(s)}
+      <img class="eff-banner" src="assets/media/img-central.png" alt="35개 학과 전산실이 하나의 중앙 관제로 통합" loading="lazy" ${anim("fade-up", 180)} />
       <div class="eff-top">
         <div ${anim("fade-right", 220)}>
           <div class="eyebrow">35개 학과 전산실</div>
@@ -423,6 +413,14 @@
       </div>
       ${s.footer ? `<p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 720)}>${s.footer}</p>` : ""}`,
 
+    /* 31. finale (mascot growth video) ------------------------------------ */
+    finale: (s) => `
+      ${head(s)}
+      <div class="finale" ${anim("zoom-in", 240)}>
+        <video class="finale-video" src="${s.video}" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      ${s.footer ? `<p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 560)}>${s.footer}</p>` : ""}`,
+
     /* 30. distribution (single donut + list) ----------------------------- */
     distribution: (s) => `
       ${head(s)}
@@ -457,7 +455,7 @@
       bg: () => mediaBg("assets/media/hero-campus.mp4", { video: true, cls: "media-bg--strong" }) + '<div class="cover-orb"></div>' },
 
     { id: "slide-2", title: "종합 제안", effect: "fade", layout: "statement",
-      bg: () => mediaBg("assets/media/bg-vision.png"),
+      bg: () => mediaBg("assets/media/bg-vision.mp4", { video: true }),
       eyebrow: "AI Native Campus 종합 제안",
       big: "영남이공대의 비전,<br><span class='grad'>틸론이 완성하는 인프라</span>",
       bullets: [
@@ -521,7 +519,7 @@
       ] },
 
     { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
-      bg: () => mediaBg("assets/media/bg-ainative.png"),
+      bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
       eyebrow: "AI Native Campus 구현",
       big: "“AI를 가르치는 대학”에서<br><span class='grad'>“AI 위에서 운영되는 대학”</span>으로",
       bullets: [
@@ -661,7 +659,7 @@
       ] },
 
     { id: "slide-22", title: "학생의 하루 ①", effect: "parallax", layout: "timeline", wide: true,
-      bg: () => mediaBg("assets/media/bg-student-am.png", { cls: "media-bg--faint" }),
+      bg: () => mediaBg("assets/media/bg-student-am.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "05  Student Life — AM", title: "학생 라이프스타일 변화 ①",
       sub: "영남이공대 신입생의 오전 — 캠퍼스는 “장소”가 아니라 “접속 가능한 전공 실습환경”이 됩니다.",
       items: [
@@ -673,7 +671,7 @@
       ba: { b: "실습실 PC가 비어 있어야 하고, 내 노트북 성능이 좋아야 실습 가능", a: "언제 어디서나 동일한 전공 실습환경에 접속" } },
 
     { id: "slide-23", title: "학생의 하루 ②", effect: "fade", layout: "timeline", wide: true,
-      bg: () => mediaBg("assets/media/bg-student-pm.png", { cls: "media-bg--faint" }),
+      bg: () => mediaBg("assets/media/bg-student-pm.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "06  Student Life — PM", title: "학생 라이프스타일 변화 ②",
       sub: "오후 — AI 활용, 팀 프로젝트, CBT 평가, 포트폴리오가 하나로 이어집니다.",
       items: [
@@ -685,7 +683,7 @@
       foot: "6PM · 집/기숙사 — <b class='hl'>DstationX + Tstation</b>으로 학교에서 작업하던 AI 코드·CAD·디자인 결과물을 그대로 이어서 작업. 캠퍼스는 “졸업까지 이어지는 나만의 전공 클라우드 환경”이 됩니다." },
 
     { id: "slide-24", title: "교수의 하루 ①", effect: "fade", layout: "timeline", wide: true,
-      bg: () => mediaBg("assets/media/bg-prof-am.png", { cls: "media-bg--faint" }),
+      bg: () => mediaBg("assets/media/bg-prof-am.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "07  Teaching Life — AM", title: "교수 라이프스타일 변화 ①",
       sub: "오전 — 실습실 관리에서 벗어나 수업 설계와 학습 데이터 기반 피드백에 집중합니다.",
       items: [
@@ -697,7 +695,7 @@
       ba: { b: "PC 상태 확인·SW 설치 오류·학생별 환경 차이 해결에 수업 시간 소모", a: "실습환경은 자동 배포, 교수님은 교육 설계와 피드백에 집중" } },
 
     { id: "slide-25", title: "교수의 하루 ②", effect: "fade", layout: "timeline", wide: true,
-      bg: () => mediaBg("assets/media/bg-prof-pm.png", { cls: "media-bg--faint" }),
+      bg: () => mediaBg("assets/media/bg-prof-pm.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "08  Teaching Life — PM", title: "교수 라이프스타일 변화 ②",
       sub: "오후 — 산학수업, CBT 평가, AI 조교, 원격지원까지 수업 운영이 데이터화됩니다.",
       items: [
@@ -755,6 +753,13 @@
         { label: "IT 기반 학과 학생에게 제공", w: 23.8 },
         { label: "전체 학생 및 교직원에게 제공", w: 7.7 },
       ] },
+
+    { id: "slide-31", title: "Growing with AI", effect: "zoom", layout: "finale", wide: true,
+      bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true, cls: "media-bg--faint" }),
+      eyebrow: "Epilogue", title: "AI와 함께 성장하는 <span class='hl'>영남이공대학교</span>",
+      sub: "실력을 넘어 학생의 미래를 여는 대학 — 틸론이 그 성장의 인프라가 되겠습니다.",
+      video: "assets/media/mascot-growth.mp4",
+      footer: "TILON × YEUNGNAM UNIVERSITY COLLEGE — AX Native Campus" },
   ];
 
   // attach index numbers
