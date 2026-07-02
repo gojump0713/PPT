@@ -650,11 +650,17 @@ table.tbl .rv { color: var(--gold); font-weight: 800; }
    Layout: GALLERY (dept illustrations)
    ========================================================================= */
 .gallery { margin-top: clamp(20px,3vh,34px); }
-.gal-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(200px, 24vw, 300px);
-  gap: 16px; overflow-x: auto; min-width: 0; max-width: 100%; padding: 8px 2px 20px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.gal-scroll::-webkit-scrollbar { height: 8px; }
-.gal-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
-.gal-card { scroll-snap-align: start; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+/* seamless auto-flow marquee: track holds two copies of the card list */
+.gal-marquee { overflow: hidden; max-width: 100%; padding: 8px 0 14px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.gal-track { display: flex; width: max-content; will-change: transform;
+  animation: gal-flow 70s linear infinite; animation-play-state: paused; }
+.slide.is-active .gal-track { animation-play-state: running; }
+.gal-marquee:hover .gal-track { animation-play-state: paused; }
+@keyframes gal-flow { to { transform: translateX(-50%); } }
+.gal-card { flex: 0 0 clamp(200px, 24vw, 300px); margin-right: 16px;
+  border:1px solid var(--line); border-radius:16px; overflow:hidden;
   background: #fff; position: relative; }
 .gal-card img { width:100%; aspect-ratio: 2066/1327; object-fit: cover; display:block; }
 .gal-card .cap { position:absolute; left:0; right:0; bottom:0; padding: 22px 14px 10px;

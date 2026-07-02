@@ -184,21 +184,24 @@
         </div>
       </div>`,
 
-    /* 10. gallery (전 학과 X+AI) ----------------------------------------- */
-    gallery: (s) => `
+    /* 10. gallery (전 학과 X+AI) — seamless auto-flow marquee ------------- */
+    gallery: (s) => {
+      const cards = GALLERY.map((g) => `
+        <figure class="gal-card">
+          <img src="assets/img/${g.f}" alt="${g.l}" loading="lazy" />
+          <span class="cat">${g.c}</span>
+          <figcaption class="cap">${g.l}</figcaption>
+        </figure>`).join("");
+      return `
       ${head(s)}
       ${list(s.bullets, 200, 110)}
       <div class="gallery" ${anim("fade-up", 380)}>
-        <div class="gal-scroll">
-          ${GALLERY.map((g) => `
-            <figure class="gal-card">
-              <img src="assets/img/${g.f}" alt="${g.l}" loading="lazy" />
-              <span class="cat">${g.c}</span>
-              <figcaption class="cap">${g.l}</figcaption>
-            </figure>`).join("")}
+        <div class="gal-marquee">
+          <div class="gal-track">${cards}${cards}</div>
         </div>
-        <p class="gal-note">← 좌우로 스크롤 · 35개 전 학과·계열 맞춤형 X+AI 실습 설계</p>
-      </div>`,
+        <p class="gal-note">학과 이미지가 자동으로 흐릅니다 · 마우스를 올리면 일시정지 — 35개 전 학과·계열 맞춤형 X+AI 실습 설계</p>
+      </div>`;
+    },
 
     /* 11. split bullets + illustration ----------------------------------- */
     career: (s) => `

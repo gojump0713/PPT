@@ -92,36 +92,11 @@
         else v.pause();
       });
     });
-    // gallery auto-scroll runs only while its slide is active
-    galleryAutoScroll(slides[index].querySelector(".gal-scroll"));
     counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
     progress.style.width = `${((index + 1) / total) * 100}%`;
 
     const id = slides[index].id;
     if (location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`);
-  }
-
-  /* ---- gallery auto-scroll (slide 10) ------------------------------------ */
-  let galRaf = null, galEl = null, galPaused = false, galResume = 0;
-  deck.addEventListener("pointerenter", (e) => { if (e.target === galEl) galPaused = true; }, true);
-  deck.addEventListener("pointerleave", (e) => { if (e.target === galEl) galPaused = false; }, true);
-  deck.addEventListener("touchstart", (e) => {
-    if (galEl && galEl.contains(e.target)) { galPaused = true; galResume = Date.now() + 4000; }
-  }, { passive: true, capture: true });
-  function galleryAutoScroll(el) {
-    if (galRaf) { cancelAnimationFrame(galRaf); galRaf = null; }
-    galEl = el;
-    if (!el) return;
-    galPaused = false;
-    const step = () => {
-      if (!galPaused || (galResume && Date.now() > galResume)) {
-        galPaused = false; galResume = 0;
-        el.scrollLeft += 0.5; // slow drift to the right
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) el.scrollLeft = 0; // loop
-      }
-      galRaf = requestAnimationFrame(step);
-    };
-    galRaf = requestAnimationFrame(step);
   }
 
   /* ---- active detection via IntersectionObserver ------------------------- */
@@ -161,8 +136,7 @@
   /* ---- wheel: enforce one-slide-per-gesture on trackpads ---------------- */
   let wheelLock = false, wheelAccum = 0;
   deck.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // ignore horizontal (gallery)
-    if (e.target.closest(".gal-scroll") && Math.abs(e.deltaX) > 4) return;
+    if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return; // ignore horizontal gestures
     wheelAccum += e.deltaY;
     if (wheelLock) { e.preventDefault(); return; }
     if (Math.abs(wheelAccum) > 26) {
