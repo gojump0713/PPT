@@ -134,6 +134,30 @@ body::before {
 }
 .media-bg--faint img,
 .media-bg--faint video { opacity: .38; }
+
+/* showcase: video plays prominently, then dims while text fades in */
+.media-bg--showcase video { opacity: .9; transition: opacity 2200ms ease 2000ms; }
+.slide.is-active .media-bg--showcase video { opacity: .16; }
+.media-bg--showcase::after { opacity: .25; transition: opacity 2200ms ease 2000ms; }
+.slide.is-active .media-bg--showcase::after { opacity: 1; }
+
+/* bootcamp slide content */
+.bc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 1.8vw, 24px); margin-top: 6px; }
+.bc-card {
+  background: rgba(10, 20, 36, .72); border: 1px solid var(--line); border-radius: 16px;
+  padding: clamp(16px, 2vw, 26px);
+  backdrop-filter: blur(4px);
+}
+.bc-card h3 { font-size: clamp(15px, 1.65vw, 21px); font-weight: 800; margin-bottom: 12px; }
+.bc-card .bc-n { color: var(--accent); margin-right: 6px; }
+.bc-card ul { display: grid; gap: 10px; }
+.bc-card li {
+  position: relative; padding-left: 18px;
+  color: var(--muted); font-size: clamp(12.5px, 1.3vw, 16px); line-height: 1.55;
+}
+.bc-card li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+.bc-card li b { color: #eaf1fb; }
+.bc-effect { margin-top: clamp(14px, 2vh, 22px); background: rgba(34, 201, 138, .1); backdrop-filter: blur(4px); }
 .media-bg--faint::after {
   background:
     linear-gradient(180deg, rgba(6, 11, 22, .62) 0%, rgba(6, 11, 22, .3) 46%, rgba(6, 11, 22, .72) 100%);

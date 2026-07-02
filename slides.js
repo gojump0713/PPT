@@ -423,6 +423,35 @@
       </div>
       ${s.footer ? `<p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 720)}>${s.footer}</p>` : ""}`,
 
+    /* 9. bootcamp (video showcase → text reveal) --------------------------- */
+    bootcamp: (s) => `
+      <div class="slide-head">
+        <span class="eyebrow" ${anim("fade-right", 2600)}>${s.eyebrow}</span>
+        <h2 class="stitle" ${anim("fade-up", 2750)}>${s.title}</h2>
+        <p class="ssub" ${anim("fade-up", 2900)} style="max-width:72ch">${s.sub}</p>
+      </div>
+      <div class="bc-grid">
+        <div class="bc-card" ${anim("fade-up", 3080)}>
+          <h3><span class="bc-n">①</span> 전교생 대상 AI 캡스톤 개최 기반 확보</h3>
+          <ul>
+            <li>iStation이 제공하는 각종 API(AI 모델 호출 · 데이터 처리 · 가상 개발환경)를 활용해 <b>전공 구분 없이 전체 학생이 참여</b>하는 AI 캡스톤 프로젝트 운영</li>
+            <li>드론·로봇·피지컬AI(공학계열), 금융·경영(상경계열) 등 <b>5대 분야별 AI 소프트웨어 개발 트랙</b> 구성 — 비전공자도 초급→중·고급 단계별 진입 가능</li>
+          </ul>
+        </div>
+        <div class="bc-card" ${anim("fade-up", 3260)}>
+          <h3><span class="bc-n">②</span> 틸론 최고 엔지니어의 현장 파견 지원</h3>
+          <ul>
+            <li>AI SW 개발 전 과정에 <b>틸론 최정예 개발자가 파견</b>되어 설계·코드리뷰·기술 멘토링 수행</li>
+            <li>기업 현직 개발자와의 <b>협업 경험 자체가 포트폴리오</b>이자 인적 네트워크로 축적</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout bc-effect" ${anim("fade-up", 3440)}>
+        <div class="eyebrow" style="justify-content:center">③ 기대효과</div>
+        <div class="big" style="font-size:clamp(15px,1.75vw,23px)">"전교생 AI 실무역량 + 산학 공동 교육실적 + 정부 재정지원사업 수주 경쟁력 + 취업연계형 포트폴리오"</div>
+        <div class="small">지역 AI 인재양성 거점대학으로의 포지셔닝</div>
+      </div>`,
+
     /* 31. finale (mascot growth video) ------------------------------------ */
     finale: (s) => `
       ${head(s)}
@@ -535,7 +564,13 @@
     { id: "slide-effects", title: "CHAPTER — 도입효과", effect: "curtain", layout: "divider",
       bg: () => mediaBg("assets/media/divider-effects.mp4", { video: true, cls: "media-bg--strong" }),
       chapter: "02", big: "AX Native Campus 도입효과",
-      sub: "AI Native Campus 구현부터 운영 효율·ESG까지 — 8가지 관점에서 살펴보는 영남이공대학교의 변화", curtain: true },
+      sub: "AI 캡스톤 캠퍼스부터 운영 효율·ESG까지 — 9가지 관점에서 살펴보는 영남이공대학교의 변화", curtain: true },
+
+    { id: "slide-bootcamp", title: "AI 부트캠프", effect: "fade", layout: "bootcamp", wide: true,
+      bg: () => mediaBg("assets/media/bg-capstone.mp4", { video: true, cls: "media-bg--showcase" }),
+      eyebrow: "AI Bootcamp — Capstone Campus",
+      title: "AI 부트캠프 운영 — 전교생이 만드는 <span class='hl'>'AI 캡스톤 캠퍼스'</span>",
+      sub: "iStation의 개방형 API 위에서 영남이공대 전 계열 학생이 드론·로봇·피지컬AI·금융·경영 AI 소프트웨어를 직접 개발하고, 틸론 최정예 엔지니어가 현장에 상주 멘토링하는 실전형 AI 인재양성 체계를 완성합니다." },
 
     { id: "slide-8", title: "AI Native Campus 구현", effect: "curtain", layout: "statement",
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true }),
