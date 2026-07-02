@@ -382,11 +382,11 @@
           <div ${anim("fade-up", 240 + i * 140)}>
             <div class="bar-row" style="margin-bottom:10px">
               <div class="lbl">${r.label}</div>
-              <div class="bar-track"><div class="bar-fill f-muted" style="--w:${r.as.w}%">${r.as.t}</div></div>
+              <div class="bar-track"><div class="bar-fill f-muted" style="--w:${r.as.w}%;transition-delay:${300 + i * 240}ms">${r.as.t}</div></div>
             </div>
             <div class="bar-row">
               <div class="lbl"></div>
-              <div class="bar-track"><div class="bar-fill f-accent" style="--w:${r.to.w}%">${r.to.t}</div></div>
+              <div class="bar-track"><div class="bar-fill f-accent" style="--w:${r.to.w}%;transition-delay:${480 + i * 240}ms">${r.to.t}</div></div>
             </div>
           </div>`).join("")}
       </div>
