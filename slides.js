@@ -78,7 +78,7 @@
     cover: (s) => `
       <div class="cover">
         <div class="kicker" ${anim("fade-down", 0)}>TILON × YEUNGNAM UNIVERSITY COLLEGE</div>
-        <h1 ${anim("fade-up", 120)}>영남이공대학교 <span class="en grad">AX Native Campus</span><br>구축 시 기대 효과</h1>
+        <h1 ${anim("fade-up", 120)}>영남이공대학교<br><span class="en grad">AX Native Campus</span><br>구축 시 기대효과</h1>
         <div class="lead" ${anim("fade-up", 320)}>VDI <span class="sep">·</span> GPU <span class="sep">·</span> Internal AI <span class="sep">·</span> Tstation <span class="sep">·</span> CBT 통합 기반</div>
         <div class="lead2" ${anim("fade-up", 420)}>미래가치 1등 직업교육대학 실행 인프라</div>
         <div class="cta" ${anim("fade-in", 640)}>
@@ -125,15 +125,21 @@
       </div>
       ${s.footer ? `<p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 720)}>${s.footer}</p>` : ""}`,
 
-    /* 5. flow (architecture layers) -------------------------------------- */
+    /* 5. flow (architecture layers, framed as one platform) --------------- */
     flow: (s) => `
       ${head(s)}
-      <div class="flow">
-        ${s.rows.map((r, i) => `
-          <div class="flow-row" ${anim("fade-right", 200 + i * 130)}>
-            <div><h3>${r.title}</h3><p>${r.desc}</p></div>
-            <div class="flow-tags">${r.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
-          </div>`).join("")}
+      <div class="flow-frame">
+        <svg class="flow-frame__stroke" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="0.6" y="0.6" width="98.8" height="98.8" rx="3" ry="6" pathLength="100"/>
+        </svg>
+        <span class="flow-frame__label">ONE PLATFORM · 한 몸으로 설계된 구조</span>
+        <div class="flow">
+          ${s.rows.map((r, i) => `
+            <div class="flow-row" ${anim("fade-right", 200 + i * 130)}>
+              <div><h3>${r.title}</h3><p>${r.desc}</p></div>
+              <div class="flow-tags">${r.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
+            </div>`).join("")}
+        </div>
       </div>`,
 
     /* 6 & 18-20. table --------------------------------------------------- */
@@ -462,9 +468,10 @@
       eyebrow: "AI Native Campus 종합 제안",
       big: "영남이공대의 비전,<br><span class='grad'>틸론이 완성하는 인프라</span>",
       bullets: [
-        "<b>3A</b>(Anyone·Anytime·Anywhere) 디지털·페이퍼리스 교육환경 구현",
         "“AI-Native 실무역량으로 지역 산업을 혁신하는 <b>X+AI 직업교육 선도대학</b>” 비전 완성",
         "“실력을 넘어 학생의 미래를 여는 대학” 슬로건의 <b>기술적 실현</b>",
+        "<b>3A</b>(Anyone, Anytime, Anywhere), 디지털·페이퍼리스 교육환경 구현",
+        "강의와 실습, 평가, 행정, 산학협력을 <b>하나의 플랫폼</b>으로 연결하는 것",
         "<b>NCSI 12년 연속 1위</b>를 넘어 전국 전문대학 디지털 전환 표준 모델 확립",
       ],
       footer: "틸론과 함께, 영남이공대학교만의 AI Native Campus를 완성합니다." },
@@ -473,7 +480,7 @@
       bg: () => '<div class="darkveil-wrap"><canvas class="darkveil-canvas"></canvas></div>',
       title2: true, eyebrow: "The Core Proposal",
       title: "AI 도입은 솔루션이 아니라 <span class='hl'>인프라</span>입니다",
-      sub: "VDI 기반 데이터 통합 환경에 GPU·AI·CBT·LMS가 하나의 캠퍼스 운영체계로 연결될 때 전 학과 AX가 가능합니다." },
+      sub: "VDI와 GPU를 캠퍼스의 심장에 두고, LMS · AI 플랫폼 · CBT · 학사 서비스 · 학습 분석 · 연구 데이터가 하나의 운영체계로 연결 — 이 구조가 갖춰질 때 비로소 일부 학과가 아닌 <b class='hl'>전 학과의 AX</b>가 가능합니다." },
 
     { id: "slide-4", title: "4 Pillars", effect: "tilt3d", layout: "quadrant", wide: true,
       eyebrow: "4 Pillars of AX Native Campus",
@@ -485,7 +492,7 @@
         { title: "디지털 교수학습 플랫폼", color: "var(--gold)", prod: "CAS · TAS · CenterFace · Station", desc: "CBT·LMS·대시보드 연계를 통한 평가 데이터화" },
         { title: "보안형 스마트 캠퍼스", color: "var(--violet)", prod: "Twater · Rstation · Vstation · CenterVista", desc: "중앙저장·워터마크·MFA를 통한 완벽한 통제" },
       ],
-      footer: "도입 후 VDI·GPU·AI·CBT·LMS·화상회의·보안·운영 Dashboard가 하나의 “교육·연구·평가·운영 데이터 흐름”으로 연결됩니다." },
+      footer: "핵심은 AX Native Campus를 구성하는 네 가지 축이 개별이 아닌 <b class='hl'>하나의 플랫폼</b>으로 운영되는 AI 캠퍼스 운영체계를 만들어 가는 것입니다." },
 
     { id: "slide-5", title: "Solution Architecture", effect: "fade", layout: "flow",
       eyebrow: "TILON Solution Architecture",
