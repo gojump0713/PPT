@@ -287,28 +287,23 @@
       <div class="callout" ${anim("fade-up", 620)}>
         <div class="big">NCSI 전문대학 <span class="hl">12년 연속 전국 1위</span> 위상에 디지털 혁신 결합</div>
         <div class="small">"세계 명문 62%의 선택 — 전문대 최초·최고 수준의 AI Native Campus 선점"</div>
+      </div>
+      <div class="brand-quotes" ${anim("fade-up", 780)}>
+        <p>“우리 대학은 전 학과에서 AI·VDI 실습환경을 제공합니다.”</p>
+        <p>“학생 개인 장비가 아니라 대학 인프라가 실습 품질을 보장합니다.”</p>
+        <p class="bq-note">Z세대와 알파세대가 선호하는 미래형 대학 이미지로 이어질 수 있습니다.</p>
       </div>`,
 
     /* 15. efficiency ----------------------------------------------------- */
     efficiency: (s) => `
       ${head(s)}
-      <img class="eff-banner" src="assets/media/img-central.png" alt="35개 학과 전산실이 하나의 중앙 관제로 통합" loading="lazy" ${anim("fade-up", 180)} />
-      <div class="eff-top">
-        <div ${anim("fade-right", 220)}>
-          <div class="eyebrow">35개 학과 전산실</div>
-          <div class="pc-grid">${Array.from({ length: 40 }).map(() => '<div class="pc"></div>').join("")}</div>
-        </div>
-        <div class="eff-arrow" ${anim("zoom-in", 320)}>→</div>
-        <div class="eff-one" ${anim("fade-left", 420)}>
-          <div class="mon">하나의<br>중앙 관제</div>
-        </div>
-      </div>
-      <p class="ssub" style="text-align:center;max-width:none;margin:0 auto 26px" ${anim("fade-up", 480)}>35개 학과 전산실을 하나의 중앙 관제 화면으로 통합 · 하드웨어 업그레이드/보안 패치 중앙 통제 · <b class="hl">부서별 전산관리자 불필요</b></p>
+      <video class="eff-banner eff-banner--tall" src="assets/media/central-live.mp4" autoplay muted loop playsinline preload="metadata" aria-label="35개 학과 전산실이 하나의 중앙 관제로 통합" ${anim("fade-up", 180)}></video>
+      <p class="ssub" style="text-align:center;max-width:none;margin:0 auto 26px" ${anim("fade-up", 320)}>35개 학과 전산실을 하나의 중앙 관제 화면으로 통합 · 하드웨어 업그레이드/보안 패치 중앙 통제 · <b class="hl">부서별 전산관리자 불필요</b></p>
       <div class="badges3">
         ${[["25% 절감", "LG전자 (2023)"], ["15% 절감", "삼성전자 (2021)"], ["20% 절감", "한국전력공사 (2022)"]].map(([n, c], i) => `
-          <div class="badge-save" ${anim("fade-up", 540 + i * 110)}><div class="b-n">${n}</div><div class="b-c">${c}</div></div>`).join("")}
+          <div class="badge-save" ${anim("fade-up", 420 + i * 110)}><div class="b-n">${n}</div><div class="b-c">${c}</div></div>`).join("")}
       </div>
-      <p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 900)}>도입 기관 사례 기준 — 전체 운영비용 약 20% 절감 예상</p>`,
+      <p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 780)}>도입 기관 사례 기준 — 전체 운영비용 약 20% 절감 예상</p>`,
 
     /* 16 & 28. divider --------------------------------------------------- */
     divider: (s) => `

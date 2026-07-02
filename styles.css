@@ -231,6 +231,19 @@ body::before {
   box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
   margin-bottom: clamp(16px, 2.4vh, 26px);
 }
+.eff-banner--tall { max-height: 38vh; }
+
+/* brand quotes below callout (slide 15 — 세계 명문의 선택) */
+.brand-quotes { text-align: center; margin-top: clamp(12px, 2vh, 20px); }
+.brand-quotes p {
+  font-weight: 800; color: #eaf1fb;
+  font-size: clamp(14px, 1.55vw, 20px); line-height: 1.6;
+}
+.brand-quotes p + p { margin-top: 2px; }
+.brand-quotes .bq-note {
+  font-weight: 500; color: var(--muted);
+  font-size: clamp(12.5px, 1.25vw, 16px); margin-top: 10px;
+}
 
 /* finale (slide 31 — mascot growth video) */
 .finale { display: flex; justify-content: center; margin-top: clamp(10px, 2vh, 22px); }
