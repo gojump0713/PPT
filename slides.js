@@ -110,8 +110,8 @@
           </div>
         </div>
         <div class="side-visual side-visual--xl" ${anim("zoom-in", 320)}>
-          <img src="assets/media/img-core-hub.png" alt="VDI·GPU 통합 인프라 허브 — LMS·CBT·AI 플랫폼·학습분석·캠퍼스 운영 연결" loading="lazy" />
-          <div class="side-cap">VDI · GPU 코어가 LMS · CBT · AI · 분석 · 운영을 하나로 연결</div>
+          <video class="fit-contain" src="assets/media/core-flow.mp4" autoplay muted loop playsinline preload="metadata" aria-label="VDI·GPU 코어에서 각 시스템으로 전류가 흐르는 통합 인프라 허브"></video>
+          <div class="side-cap">VDI · GPU 코어에서 LMS · CBT · AI · 분석 · 운영으로 흐르는 데이터 전류</div>
         </div>
       </div>`,
 
@@ -130,7 +130,8 @@
       ${head(s)}
       <div class="flow-frame">
         <svg class="flow-frame__stroke" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
-          <rect x="0.6" y="0.6" width="98.8" height="98.8" rx="3" ry="6" pathLength="100"/>
+          <rect class="base" x="0.6" y="0.6" width="98.8" height="98.8" rx="3" ry="6" pathLength="100"/>
+          <rect class="runner" x="0.6" y="0.6" width="98.8" height="98.8" rx="3" ry="6" pathLength="100"/>
         </svg>
         <span class="flow-frame__label">ONE PLATFORM · 한 몸으로 설계된 구조</span>
         <div class="flow">
@@ -495,6 +496,7 @@
       footer: "핵심은 AX Native Campus를 구성하는 네 가지 축이 개별이 아닌 <b class='hl'>하나의 플랫폼</b>으로 운영되는 AI 캠퍼스 운영체계를 만들어 가는 것입니다." },
 
     { id: "slide-5", title: "Solution Architecture", effect: "fade", layout: "flow",
+      bg: () => mediaBg("assets/media/bg-vision-net.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "TILON Solution Architecture",
       title: "개별 제품이 아닌 ‘구축 패키지’",
       sub: "영남이공대학교 AX Native Campus를 구성하는 4개 계층.",
@@ -506,13 +508,14 @@
       ] },
 
     { id: "slide-6", title: "Strategic Alignment", effect: "fade", layout: "table", wide: true,
+      bg: () => mediaBg("assets/media/bg-arrows.mp4", { video: true, cls: "media-bg--faint" }),
       eyebrow: "Strategic Alignment", title: "비전 실현의 가교",
       sub: "틸론 솔루션은 영남이공대의 비전 문구를 실제 수업·실습·평가·성과관리·산학협력 시스템으로 전환하는 실행 인프라입니다.",
       rvLast: true,
       cols: ["구분", "핵심 방향", "틸론 제안 연결", "결과 가치"],
       rows: [
-        ["대학 비전", "미래가치 1등 직업교육대학", "전 학과 AI·VDI·GPU 실습환경으로 직업교육 경쟁력 고도화", "비전 선언과 실제 학습경험 간 간극 해소"],
-        ["AID 비전", "AI-Native 실무역량 기반 X+AI 직업교육 선도대학", "DstationX·iStation·Tstation·TAS 기반 수업·실습·평가 전환", "지속 가능한 성과 기반 확보"],
+        ["대학 비전", "<span class='red-sweep'>미래가치 1등 직업교육대학</span>", "전 학과 AI·VDI·GPU 실습환경으로 직업교육 경쟁력 고도화", "비전 선언과 실제 학습경험 간 간극 해소"],
+        ["AID 비전", "<span class='red-sweep'>AI-Native 실무역량 기반 X+AI 직업교육 선도대학</span>", "DstationX·iStation·Tstation·TAS 기반 수업·실습·평가 전환", "지속 가능한 성과 기반 확보"],
         ["성과관리", "교육품질·학생교육·산학협력·글로벌·대학체계 혁신지수", "CenterVista 기반 데이터 대시보드와 학습성과 관리", "대학 혁신 지수 향상"],
         ["지역산업", "미래모빌리티·로봇·헬스케어·반도체·ABB·도심형서비스", "D6+AI 전공 실습과 산학 프로젝트형 교육 운영", "대구 전략산업 맞춤형 모델 완성"],
         ["평생교육", "지역사회 AI 평생학습 거점", "재직자·성인학습자 대상 원격 실습형 AI·DX 직무전환 교육", "지역사회 확산 및 대학 공공성 강화"],
