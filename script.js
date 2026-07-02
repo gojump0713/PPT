@@ -279,14 +279,15 @@
   });
 
   /* ---- boot -------------------------------------------------------------- */
-  window.addEventListener("load", () => {
+  function ready() {
+    if (ready._done) return;
+    ready._done = true;
     if (location.hash) jumpToHash();
     updateUI(current);
     setTimeout(() => boot.classList.add("hide"), 360);
-  });
-  // fallback if load already fired
-  if (document.readyState === "complete") {
-    updateUI(0);
-    setTimeout(() => boot.classList.add("hide"), 360);
   }
+  window.addEventListener("load", ready);
+  if (document.readyState === "complete") ready();
+  // failsafe: never trap the deck behind the loading veil (slow media/network)
+  setTimeout(ready, 2500);
 })();
