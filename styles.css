@@ -152,11 +152,11 @@ body::before {
   font-size: clamp(40px, 5.6vw, 84px);
   text-shadow: 0 8px 40px rgba(0, 0, 0, .6);
 }
-.slide.is-active .bc-hero { animation: bc-hero 5900ms ease 2200ms forwards; }
+.slide.is-active .bc-hero { animation: bc-hero 3400ms ease 2200ms forwards; }
 @keyframes bc-hero {
   0%   { opacity: 0; transform: scale(.94); }
-  10%  { opacity: 1; transform: scale(1); }
-  88%  { opacity: 1; transform: scale(1); }
+  17%  { opacity: 1; transform: scale(1); }
+  80%  { opacity: 1; transform: scale(1); }
   100% { opacity: 0; transform: scale(1.03); }
 }
 
@@ -182,13 +182,16 @@ body::before {
     linear-gradient(180deg, rgba(6, 11, 22, .62) 0%, rgba(6, 11, 22, .3) 46%, rgba(6, 11, 22, .72) 100%);
 }
 
-/* career slide inline visual */
+/* career slide inline visual (compact card, media on top) */
 .career-shot {
-  width: 100%; border-radius: 14px;
+  width: 100%; max-height: 26vh; object-fit: cover; display: block;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, .08);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
 }
+.career-card { padding: clamp(14px, 1.6vw, 22px); }
+.career-card .callout { padding: clamp(12px, 1.5vw, 20px); }
 
 /* right-column AI visuals (slides 3 · 12 · 13) */
 .side-visual { width: 100%; max-width: 520px; justify-self: end; }

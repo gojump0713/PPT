@@ -217,15 +217,15 @@
         <div>
           ${list(s.bullets, 220, 100)}
         </div>
-        <div class="visual">
-          <div class="card" ${anim("fade-left", 300)} style="text-align:center;width:100%">
-            <img class="career-shot" src="assets/media/img-career.png" alt="VDI 업무환경에서 근무하는 졸업생" loading="lazy" />
+        <div class="visual" style="align-self:start">
+          <div class="card career-card" ${anim("fade-left", 300)} style="text-align:center;width:100%">
+            <video class="career-shot" src="assets/media/career-live.mp4" autoplay muted loop playsinline preload="metadata" aria-label="VDI 업무환경에서 근무하는 졸업생"></video>
             <div class="eyebrow" style="justify-content:center">4학년 취업준비 C학생 사례</div>
-            <div class="grid g-2" style="margin:10px 0 4px">
+            <div class="grid g-2" style="margin:8px 0 0">
               <div class="tag" style="justify-content:center">VDI 업무환경 선행학습</div>
               <div class="tag" style="justify-content:center">클라우드PC 창업지원</div>
             </div>
-            <div class="callout" style="margin-top:20px">
+            <div class="callout" style="margin-top:12px">
               <div class="big">채용서류에<br><span class="hl">“디지털 스마트 업무환경 숙련”</span><br>자신있게 기재</div>
               <div class="small">2,260여 개 협력업체 산학연계 취업 강점과 결합</div>
             </div>
@@ -427,19 +427,19 @@
     bootcamp: (s) => `
       <div class="bc-hero" aria-hidden="true"><div class="bc-hero__t">전교생이 만드는<br><span class="grad">'AI 캡스톤 캠퍼스'</span></div></div>
       <div class="slide-head">
-        <span class="eyebrow" ${anim("fade-right", 8200)}>${s.eyebrow}</span>
-        <h2 class="stitle" ${anim("fade-up", 8350)}>${s.title}</h2>
-        <p class="ssub" ${anim("fade-up", 8500)} style="max-width:72ch">${s.sub}</p>
+        <span class="eyebrow" ${anim("fade-right", 5600)}>${s.eyebrow}</span>
+        <h2 class="stitle" ${anim("fade-up", 5750)}>${s.title}</h2>
+        <p class="ssub" ${anim("fade-up", 5900)} style="max-width:72ch">${s.sub}</p>
       </div>
       <div class="bc-grid">
-        <div class="bc-card" ${anim("fade-up", 8680)}>
+        <div class="bc-card" ${anim("fade-up", 6080)}>
           <h3><span class="bc-n">①</span> 전교생 대상 AI 캡스톤 개최 기반 확보</h3>
           <ul>
             <li>iStation이 제공하는 각종 API(AI 모델 호출 · 데이터 처리 · 가상 개발환경)를 활용해 <b>전공 구분 없이 전체 학생이 참여</b>하는 AI 캡스톤 프로젝트 운영</li>
             <li>드론·로봇·피지컬AI(공학계열), 금융·경영(상경계열) 등 <b>5대 분야별 AI 소프트웨어 개발 트랙</b> 구성 — 비전공자도 초급→중·고급 단계별 진입 가능</li>
           </ul>
         </div>
-        <div class="bc-card" ${anim("fade-up", 8860)}>
+        <div class="bc-card" ${anim("fade-up", 6260)}>
           <h3><span class="bc-n">②</span> 틸론 최고 엔지니어의 현장 파견 지원</h3>
           <ul>
             <li>AI SW 개발 전 과정에 <b>틸론 최정예 개발자가 파견</b>되어 설계·코드리뷰·기술 멘토링 수행</li>
@@ -447,7 +447,7 @@
           </ul>
         </div>
       </div>
-      <div class="callout bc-effect" ${anim("fade-up", 9040)}>
+      <div class="callout bc-effect" ${anim("fade-up", 6440)}>
         <div class="eyebrow" style="justify-content:center">③ 기대효과</div>
         <div class="big" style="font-size:clamp(15px,1.75vw,23px)">"전교생 AI 실무역량 + 산학 공동 교육실적 + 정부 재정지원사업 수주 경쟁력 + 취업연계형 포트폴리오"</div>
         <div class="small">지역 AI 인재양성 거점대학으로의 포지셔닝</div>
@@ -603,8 +603,10 @@
       eyebrow: "Global & Lifelong", title: "글로벌 및 평생직업교육 확장 영역",
       lead: "언제 어디서나 접속 가능한, 장소 제약 없는 학습 환경",
       bullets: [
-        "해외 학생·재직자·성인학습자의 <b>원격 실습형 교육</b> 참여",
-        "학령인구 감소 대응과 <b>지역사회 교육 거점</b> 강화",
+        "해외 유학생, 성인학습자, 재직자도 <b>동일한 가상 실습환경</b>으로 원격 실습형 교육 참여",
+        "해외 학생은 <b>입국 전부터 사전교육</b>을 받을 수 있음",
+        "재직자는 직장을 유지하면서 원격으로 <b>AI·DX 직무전환 교육</b> 참여",
+        "영남이공대는 이를 통해 학령인구 감소에 대응하고, <b>지역사회 AI 평생학습 거점</b>으로서 역할 강화",
       ] },
 
     { id: "slide-13", title: "신기술 인재 거점", effect: "zoom", layout: "talent", wide: true,
