@@ -96,7 +96,7 @@
     /* 3. transform (Teaching AI -> Operating on AI) ---------------------- */
     transform: (s) => `
       ${head(s)}
-      <div class="split" style="margin-top:4px;align-items:center">
+      <div class="split" style="margin-top:4px;align-items:center;grid-template-columns:.85fr 1.15fr">
         <div>
           <div class="card" ${anim("fade-right", 200)} style="text-align:center">
             <div class="eyebrow" style="justify-content:center">TEACHING AI</div>
@@ -109,7 +109,7 @@
             <div class="big" style="font-size:clamp(15px,1.7vw,22px)">‘AI를 가르치는 대학’을 넘어<br><span class="hl">‘AI 인프라 위에서 모든 전공을 혁신하는 대학’</span>으로</div>
           </div>
         </div>
-        <div class="side-visual" ${anim("zoom-in", 320)}>
+        <div class="side-visual side-visual--xl" ${anim("zoom-in", 320)}>
           <img src="assets/media/img-core-hub.png" alt="VDI·GPU 통합 인프라 허브 — LMS·CBT·AI 플랫폼·학습분석·캠퍼스 운영 연결" loading="lazy" />
           <div class="side-cap">VDI · GPU 코어가 LMS · CBT · AI · 분석 · 운영을 하나로 연결</div>
         </div>

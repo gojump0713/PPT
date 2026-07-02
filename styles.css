@@ -150,6 +150,7 @@ body::before {
   border: 1px solid rgba(255, 255, 255, .1);
   box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
 }
+.side-visual--xl { max-width: 700px; }
 .side-cap { color: var(--faint); font-size: clamp(12px, 1.2vw, 14px); margin-top: 12px; text-align: center; }
 .side-legend { display: grid; gap: 10px; margin-top: 16px; }
 .side-legend div {
