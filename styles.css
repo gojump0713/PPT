@@ -125,6 +125,10 @@ body::before {
 .media-bg--strong img,
 .media-bg--strong video { opacity: .58; }
 
+/* film-reel slide: full-bleed 8-cut movie, full brightness, no veil */
+.media-bg--movie video { opacity: 1; }
+.media-bg--movie::after { display: none; }
+
 /* DarkVeil WebGL shader background (slide 3) */
 .darkveil-wrap { position: absolute; inset: 0; overflow: hidden; }
 .darkveil-wrap canvas { width: 100%; height: 100%; display: block; opacity: .5; }

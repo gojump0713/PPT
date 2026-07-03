@@ -51,6 +51,22 @@
     });
   });
 
+  /* sequential multi-cut videos (film reel slide): play cuts back-to-back, loop */
+  deck.querySelectorAll("video[data-seq]").forEach((v) => {
+    const cuts = JSON.parse(v.dataset.seq);
+    let cur = 0;
+    v.src = cuts[0];
+    v.addEventListener("ended", () => {
+      cur = (cur + 1) % cuts.length;
+      v.src = cuts[cur];
+      v.play().catch(() => {});
+    });
+    v._seqReset = () => {
+      if (cur !== 0) { cur = 0; v.src = cuts[0]; }
+      else v.currentTime = 0;
+    };
+  });
+
   /* prime donut ring targets from data-p */
   deck.querySelectorAll(".donut .ring[data-p]").forEach((r) => {
     r.style.setProperty("--target", r.dataset.p);
@@ -82,6 +98,8 @@
       return;
     }
     current = index;
+    // restart film-reel sequences from cut 1 whenever their slide is entered
+    slides[index].querySelectorAll("video[data-seq]").forEach((v) => v._seqReset && v._seqReset());
     updateUI(index);
   }
 

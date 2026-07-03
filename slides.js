@@ -474,6 +474,9 @@
       </div>
       ${s.footer ? `<p class="footnote plain" style="text-align:center;border:none;padding:0" ${anim("fade-up", 560)}>${s.footer}</p>` : ""}`,
 
+    /* 55. filmreel (8-cut sequential mascot movie, full-bleed) ------------ */
+    filmreel: () => "",
+
     /* 30. distribution (single donut + list) ----------------------------- */
     distribution: (s) => `
       ${head(s)}
@@ -918,6 +921,12 @@
         { label: "IT 기반 학과 학생에게 제공", w: 23.8 },
         { label: "전체 학생 및 교직원에게 제공", w: 7.7 },
       ] },
+
+    { id: "slide-movie", title: "영이 스토리 무비", effect: "fade", layout: "filmreel", wide: true,
+      bg: () => {
+        const cuts = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `assets/media/yeongi-cut${n}.mp4`));
+        return `<div class="media-bg media-bg--movie"><video data-seq='${cuts}' muted playsinline preload="auto" aria-label="영이 8컷 스토리 애니메이션"></video></div>`;
+      } },
 
     { id: "slide-31", title: "Growing with AI", effect: "zoom", layout: "finale", wide: true,
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true, cls: "media-bg--faint" }),
