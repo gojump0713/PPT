@@ -67,6 +67,51 @@
     };
   });
 
+  /* typewriter titles: type each [data-type] line in order when its slide activates */
+  function runTyping(slide) {
+    const lines = [...slide.querySelectorAll("[data-type]")];
+    if (!lines.length) return;
+    const token = (runTyping._token = (runTyping._token || 0) + 1);
+    const caret = document.createElement("span");
+    caret.className = "type-caret";
+    lines.forEach((l) => (l.textContent = ""));
+    let li = 0, ci = 0;
+    (function tick() {
+      if (token !== runTyping._token) { caret.remove(); return; }
+      if (li >= lines.length) {
+        setTimeout(() => { if (token === runTyping._token) caret.remove(); }, 2200);
+        return;
+      }
+      const line = lines[li], text = line.dataset.type;
+      line.appendChild(caret);
+      if (ci < text.length) {
+        ci++;
+        line.insertBefore(document.createTextNode(text[ci - 1]), caret);
+        setTimeout(tick, 70);
+      } else { li++; ci = 0; setTimeout(tick, 300); }
+    })();
+  }
+
+  /* mascot cursor: flying 영이 follows the pointer, cape flutters via 2-frame flip */
+  const mcur = document.createElement("div");
+  mcur.id = "mascot-cursor";
+  const mimg = document.createElement("img");
+  const mframes = ["assets/img/cursor-yeongi-1.png", "assets/img/cursor-yeongi-2.png"];
+  mframes.forEach((f) => { const p = new Image(); p.src = f; });
+  mimg.src = mframes[0];
+  mimg.alt = "";
+  mcur.appendChild(mimg);
+  document.body.appendChild(mcur);
+  let mframe = 0;
+  setInterval(() => { mframe = 1 - mframe; mimg.src = mframes[mframe]; }, 170);
+  window.addEventListener("pointermove", (e) => {
+    mcur.style.left = `${e.clientX}px`;
+    mcur.style.top = `${e.clientY}px`;
+    mcur.classList.add("is-on");
+  });
+  document.documentElement.addEventListener("mouseleave", () => mcur.classList.remove("is-on"));
+  window.addEventListener("blur", () => mcur.classList.remove("is-on"));
+
   /* prime donut ring targets from data-p */
   deck.querySelectorAll(".donut .ring[data-p]").forEach((r) => {
     r.style.setProperty("--target", r.dataset.p);
@@ -100,6 +145,8 @@
     current = index;
     // restart film-reel sequences from cut 1 whenever their slide is entered
     slides[index].querySelectorAll("video[data-seq]").forEach((v) => v._seqReset && v._seqReset());
+    // replay typewriter titles whenever their slide is entered
+    runTyping(slides[index]);
     updateUI(index);
   }
 

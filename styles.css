@@ -125,6 +125,36 @@ body::before {
 .media-bg--strong img,
 .media-bg--strong video { opacity: .58; }
 
+/* mascot pointer: hide the native cursor everywhere, a flying 영이 follows instead */
+*, *::before, *::after { cursor: none !important; }
+#mascot-cursor {
+  position: fixed; left: -200px; top: -200px; z-index: 10000;
+  pointer-events: none; opacity: 0; transition: opacity .18s ease;
+}
+#mascot-cursor.is-on { opacity: 1; }
+body.cursor-hidden #mascot-cursor { opacity: 0; }
+#mascot-cursor img {
+  width: 112px; height: auto; display: block;
+  /* the pointer's true hotspot sits at the mascot's forward fist (upper-right) */
+  transform: translate(-82%, -35%);
+  animation: mascot-fly 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35));
+}
+@keyframes mascot-fly {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 3px -6px; rotate: -4deg; }
+}
+
+/* typewriter cover title */
+.type-line { display: inline-block; min-width: 1px; min-height: 1.05em; vertical-align: bottom; }
+.type-caret {
+  display: inline-block; width: .08em; height: .96em;
+  margin-left: .06em; vertical-align: -.08em;
+  background: var(--accent, #e0455a);
+  animation: caret-blink .85s step-end infinite;
+}
+@keyframes caret-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
 /* film-reel slide: full-bleed 8-cut movie, full brightness, no veil */
 .media-bg--movie video { opacity: 1; }
 .media-bg--movie::after { display: none; }

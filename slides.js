@@ -78,7 +78,7 @@
     cover: (s) => `
       <div class="cover">
         <div class="kicker" ${anim("fade-down", 0)}>TILON × YEUNGNAM UNIVERSITY COLLEGE</div>
-        <h1 ${anim("fade-up", 120)}>영남이공대학교<br><span class="en grad">AX Native Campus</span><br>구축 시 기대효과</h1>
+        <h1 class="type-title" ${anim("fade-up", 120)}><span class="type-line" data-type="영남이공대학교"></span><br><span class="type-line en grad" data-type="AX Native Campus"></span><br><span class="type-line" data-type="구축 시 기대효과"></span></h1>
         <div class="lead" ${anim("fade-up", 320)}>VDI <span class="sep">·</span> GPU <span class="sep">·</span> Internal AI <span class="sep">·</span> Tstation <span class="sep">·</span> CBT 통합 기반</div>
         <div class="lead2" ${anim("fade-up", 420)}>미래가치 1등 직업교육대학 실행 인프라</div>
         <div class="cta" ${anim("fade-in", 640)}>
@@ -507,6 +507,12 @@
      SLIDE DATA — all 30 pages
      ======================================================================= */
   const SLIDES = [
+    { id: "slide-movie", title: "영이 스토리 무비", effect: "fade", layout: "filmreel", wide: true,
+      bg: () => {
+        const cuts = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `assets/media/yeongi-cut${n}.mp4`));
+        return `<div class="media-bg media-bg--movie"><video data-seq='${cuts}' muted playsinline preload="auto" aria-label="영이 8컷 스토리 애니메이션"></video></div>`;
+      } },
+
     { id: "slide-1", title: "Opening", effect: "parallax", layout: "cover",
       bg: () => mediaBg("assets/media/hero-campus.mp4", { video: true, cls: "media-bg--strong" }) + '<div class="cover-orb"></div>' },
 
@@ -921,12 +927,6 @@
         { label: "IT 기반 학과 학생에게 제공", w: 23.8 },
         { label: "전체 학생 및 교직원에게 제공", w: 7.7 },
       ] },
-
-    { id: "slide-movie", title: "영이 스토리 무비", effect: "fade", layout: "filmreel", wide: true,
-      bg: () => {
-        const cuts = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `assets/media/yeongi-cut${n}.mp4`));
-        return `<div class="media-bg media-bg--movie"><video data-seq='${cuts}' muted playsinline preload="auto" aria-label="영이 8컷 스토리 애니메이션"></video></div>`;
-      } },
 
     { id: "slide-31", title: "Growing with AI", effect: "zoom", layout: "finale", wide: true,
       bg: () => mediaBg("assets/media/bg-ainative.mp4", { video: true, cls: "media-bg--faint" }),
