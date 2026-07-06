@@ -510,7 +510,7 @@
     { id: "slide-movie", title: "영이 스토리 무비", effect: "fade", layout: "filmreel", wide: true,
       bg: () => {
         const cuts = JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `assets/media/yeongi-cut${n}.mp4`));
-        return `<div class="media-bg media-bg--movie"><video data-seq='${cuts}' muted playsinline preload="auto" aria-label="영이 8컷 스토리 애니메이션"></video></div>`;
+        return `<div class="media-bg media-bg--movie"><video data-seq='${cuts}' autoplay muted playsinline preload="auto" aria-label="영이 8컷 스토리 애니메이션"></video></div>`;
       } },
 
     { id: "slide-1", title: "Opening", effect: "parallax", layout: "cover",
